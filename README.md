@@ -17,7 +17,7 @@ Each task highlights a different aspect of building effective AI systems:
 
 Task| Main Contribution | Model | Dataset | Macro F1
 |---|---|---|---|---|
-Anaphora Resolution| Designing a custom preprocessing pipeline to transform coreference data into a classification problem | spanBERT-base-cased | PreCc Coreference Dataset | 0.97
+Anaphora Resolution| Designing a custom preprocessing pipeline to transform coreference data into a classification problem | spanBERT-base-cased | PreCo Coreference Dataset | 0.97
 Named Entity Recognition| Token-level classification needing subword-token alignment and -100 masking for loss calculation | BERT-based-cased | CoNLL-2025 NER | 0.79
 Sentiment Analysis| Handling class imbalance by weighting loss and optimising decision thresholds | BERT-based-uncased | cardiffnlp tweet_eval(offensive) | 0.80
 
