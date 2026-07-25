@@ -1,4 +1,6 @@
-# Transformer-Based NLP Systems for Anaphora Resolution, Named Entity Recognition and Sentiment Classification
+# Transformer-Based NLP Systems 
+
+Transformer-based NLP systems for anaphora resolution, named entity recognition, and sentiment classification with custom preprocessing pipelines and evaluation frameworks.
 
 ## Overview
 
@@ -13,11 +15,11 @@ The aim of this project was to understand the challenges involved in building tr
 
 Each task highlights a different aspect of building effective AI systems:
 
-Task| Main Focus
-|---|---|
-Anaphora Resolution| Designing a custom preprocessing pipeline to transform coreference data into a classification problem
-Named Entity Recognition| Token-level classification
-Sentiment Analysis| Handling class imbalance and optimising decision thresholds
+Task| Main Contribution | Model | Dataset | Macro F1
+|---|---|---|---|---|
+Anaphora Resolution| Designing a custom preprocessing pipeline to transform coreference data into a classification problem | spanBERT-base-cased | PreCc Coreference Dataset | 0.97
+Named Entity Recognition| Token-level classification needing subword-token alignment and -100 masking for loss calculation | BERT-based-cased | CoNLL-2025 NER | 0.79
+Sentiment Analysis| Handling class imbalance by weighting loss and optimising decision thresholds | BERT-based-uncased | cardiffnlp tweet_eval(offensive) | 0.80
 
 
 ---
@@ -49,7 +51,7 @@ The preprocessing pipeline:
 
 ## Key Contribution
 
-The main contribution of this task is the data engineering pipeline.
+The main challenge in this task was the data engineering pipeline, converting the general document level coreferences into noun-pronoun pairs with two additional distractor nouns for a supervised transformer classification problem.
 
 Rather than using the dataset directly, the coreference annotations were redesigned into a supervised classification format, allowing a transformer classifier to be trained on the problem.
 

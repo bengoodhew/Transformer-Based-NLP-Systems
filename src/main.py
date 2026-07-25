@@ -123,7 +123,7 @@ def main():
             evaluator = nerEval(device = device, idToLabel=ID2label)
 
             if trainMode:
-                epochs = 4 # 7 was best 0.817812 -- but the val loss was higher -- got test 0.7842140097307752
+                epochs = 4
                 learningRate = 2e-5
 
                 criterion = torch.nn.CrossEntropyLoss(ignore_index=-100)
