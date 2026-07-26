@@ -17,9 +17,9 @@ Each task highlights a different aspect of building effective AI systems:
 
 Task| Main Contribution | Model | Dataset | Macro F1
 |---|---|---|---|---|
-Anaphora Resolution| Designing a custom preprocessing pipeline to transform coreference data into a classification problem | spanBERT-base-cased | PreCo Coreference Dataset | 0.97
-Named Entity Recognition| Token-level classification needing subword-token alignment and -100 masking for loss calculation | BERT-based-cased | CoNLL-2025 NER | 0.79
-Sentiment Analysis| Handling class imbalance by weighting loss and optimising decision thresholds | BERT-based-uncased | cardiffnlp tweet_eval(offensive) | 0.80
+Anaphora Resolution| Designing a custom preprocessing pipeline to transform coreference data into a classification problem | SpanBERT-base-cased | PreCo Coreference Dataset | 0.97
+Named Entity Recognition| Token-level classification needing subword-token alignment and -100 masking for loss calculation | BERT-base-cased | CoNLL-2025 NER | 0.79
+Sentiment Analysis| Handling class imbalance by weighting loss and optimising decision thresholds | BERT-base-uncased | CardiffNLP Tweet_Eval (offensive) | 0.80
 
 
 ---
@@ -131,7 +131,7 @@ The primary engineering challenge addressed in this task was class imbalance. Of
 
 A weighted loss was implemented to increase the contribution of minority-class errors during training.
 
-A larger loss weight was given to offensive class attempts to reduce false negatives. This reflects the intended design of an offensive language filter and I was working under the assumption that marking some non-offensive tweets is perfered compared wiht not flagging offensive tweets.
+A larger loss weight was given to offensive class attempts to reduce false negatives. This reflects the intended design of an offensive language filter and I was working under the assumption that marking some non-offensive tweets is perferred compared with not flagging offensive tweets.
 
 ### Threshold Optimisation
 
@@ -165,7 +165,7 @@ The confusion matrix shows non-offensive is still favoured in classification, al
 
 # Common Training Framework
 
-All three tasks share the same reusable training framework, allowing task-specific logic to be separated from the optimisation pipline.
+All three tasks share the same reusable training framework, allowing task-specific logic to be separated from the optimisation pipeline.
 
 
 Shared features include:
@@ -252,9 +252,9 @@ Execute:
 - scikit-learn
 
 ### pre-trained models:
-- SpanBERT base
-- BERT based cased token classification
-- BERT based uncased 
+- SpanBERT-base-cased
+- BERT-base-cased
+- BERT-base-uncased
 
 ---
 # Skills Demonstrated
